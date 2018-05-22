@@ -1,10 +1,14 @@
 import sklearn
 import numpy
 import matplotlib.pyplot as plt
+import pandas as pd
+from scipy import stats
 from sklearn import datasets
 from sklearn import svm
-from sklearn.mixture import GaussianMixture
-from sklearn.cluster import k_means
+from sklearn.mixture import GMM
+from sklearn.cross_validation import train_test_split
+from sklearn import preprocessing
+from sklearn.cluster import KMeans
 #digits = datasets.load_digits()
 
 #clf = svm.SVC(gamma=0.001, C=100)
@@ -17,7 +21,15 @@ from sklearn.cluster import k_means
 #plt.show()
 
 
-print("____________________Assignment 2_________________________")
+print("____________________Assignment 2__________________________")
 
 with open("seeds_dataset.txt","r") as myFile:
-    data=myFile.read()
+    data = myFile.read()
+
+#print(data)
+
+nData = pd.read_csv('seeds_dataset.txt', sep='\t')
+print(nData)
+
+
+
